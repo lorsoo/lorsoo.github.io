@@ -1,239 +1,652 @@
+@font-face {
+  font-family: "Papyrus";
+  src: url("Fonts/Papyrus/papyrus.ttf") format("truetype");
+}
 
-    
-      
-      
 @media screen {
-
-
-
- /*    .text:not(:last-child) { /* Apply to all items except the last one 
+  /*    .text:not(:last-child) { /* Apply to all items except the last one 
   border-right: 1vw solid #DAA520; /* Vertical line style 
-  padding-right: 20px ; /* Space between text and line 
-
-*/
-.swiper-container {
-      width: 100%;
-      height: 400px; /* Set the height of the Swiper container */
-    }
-
-    .swiper-slide {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%; /* This makes sure the slide takes up the full container height */
-    }
-
-    .swiper-slide img {
-      width: 100%; /* Adjust to fit the image to the container */
-      height: auto; /* Maintain aspect ratio */
-    }
-
-#sticky-menu {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  transition: transform 0.3s ease;
- z-index: 10;
-}
-
-#sticky-menu ul {
-  list-style: none;
-  display: flex;
-  gap: 3vw;
-}
-
-#sticky-menu ul li {
-  cursor: pointer;
-}
-
-.hidden {
-  transform: translateY(-100%); /* Slide it up off-screen */
-}
-
-
-
-
-
-
-  .Separator{
-background-color: black;
-width: 0.45vw;
-height:14vw;
-margin: 4vw;
-border: none;
-padding: 0;
-transform-origin: center;
-transform: scaleY(0.5) scaleX(0.5);
-
-}
-
-      
-      .ScrollMenu{
-            
-            top: 0;
-            padding: 0;
-            position: fixed;
-            margin: 0 auto;
-            width: 100vw; /* Length  */
-            height: 20vw; /* Thickness  */
-            background-color: black;
-            border-top-left-radius: 10px; /* Rounded top left corner */
-            border-top-right-radius: 10px; /* Rounded top right corner */
-            
-      }
-
-
-body {
-  font-family: "Roboto",sans-serif;
-}
-
-
-  #Top {
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: red;
-    margin: 0;
-    padding: 0;
-    width: 100%;          /* Full width of the viewport */
-    height: 30vh;
-    overflow: hidden;
-    border-radius: 5px;
-  }
-
-  .PageTitle {
-    font-size: 8vw;
-  }
+  padding-right: 20px ; /* Space between text and line */
 
   
-  #Footer {
-    display: flex;
-    flex-direction: column;
+  
+  
+  
+  
+  
+  /*About*/
+  
+  .text-block {
+  display: flex; /* flexbox for easy centering */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  height: 20vh; /* Height of the block will be 20% of the viewport height */
+   /* Line height equals the container height to center the text vertically */
+  
+  padding: 0 5%; /* Horizontal padding as percentage */
+  
+  text-align: center; /* text horizontally inside the container */
+}
+
+.text-block p {
+  margin: 0; 
+}
+
+  
+  /*Projects Overview puizzle layout*/
+  
+  .TopBack{
+    background-color: black;
+    padding: 10vw;
+    color: white;
+    border-bottom-left-radius: 5px; 
+  border-bottom-right-radius: 5px; 
+  }
+  
+  .Me {
+  display: flex; /* Arrange the rows side by side */
+  height: 100vh; /* Full screen height */
+}
+
+.black-row, .white-row {
+  flex: 1; /* Each row takes up half the width */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center content vertically and horizontally */
+}
+
+.black-row {
+  background-color: black;
+  color: white; /* make txt visible is visible on black background */
+}
+
+.white-row {
+  background-color: white;
+  color: black; /*  color for white background */
+}
+
+.black-row img {
+  max-width: 100%; /* Ensure the image scales  */
+  height: auto; /* Keeping aspect ratio */
+}
+
+  
+  
+  /* Container for the puzzle layout */
+.puzzle-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr)); 
+  gap: 1em; /* Space between  */
+  padding: 2em;
+}
+
+/* Puzzle item container */
+.puzzle-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 1 / 1; /* Maintain square shape */
+}
+
+/* Puzzle images */
+.puzzle-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease; /* Zoom effect */
+}
+
+/* Overlay for hover effect */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Project title styling */
+.project-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Hover effect */
+.puzzle-item:hover img {
+  transform: scale(1.1); /* Zoom into the image */
+}
+
+.puzzle-item:hover .overlay {
+  opacity: 1; /* Show overlay */
+}
+
+  
+  
+*/
+/* Center the Swiper */
+  .Img:hover{
+    opacity: 0.8;
+  }
+  
+  /* Submenu starts hidden */
+.submenu {
+  display: none;
+  margin: 0; /* Reset margins for clean layout */
+  padding: 0;
+  list-style: none;
+}
+
+
+.submenu li {
+  margin: 5px 0;
+}
+
+.submenu a {
+  text-decoration: none;
+  color: gray; 
+}
+
+/* Smooth transition effect */
+.submenu {
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  max-height: 0; /* Collapse by default */
+  overflow: hidden;
+  opacity: 0;
+}
+
+/* When submenu is expanded */
+.submenu.open {
+  max-height: 200px; /* Set max-height for the submenu */
+  opacity: 1;
+}
+
+  
+  
+   .text{
     font-size: 3vw;
-    background-color: antiquewhite;
+  }
+  
+  
+  
+  
+  /*Abouext section:*/
+  
+  
+  
+  
+  
+  
+  .TopContainer{
+    display:flex;
+    height:20vh;
+    background-color: black;
+  }
+  
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .Word{
+    padding-left: 2vw;
+  }
+  
+  
+  
+  .parentLine {
+      display: flex; /* Use Flexbox on the parent */
+      justify-content: center; /* Horizontally center the line */
+      align-items: center; /* vertically center the line   */
+       
+    margin-bottom: 3vw;
+    }
+  
+  .Line1{
+    display:flex;
+    width: 80%;
+    background-color: black;
+    height: 0.25vw;
+  }
+  
+  
+  
+  
+  .IconImage{
+    width: 8vw;
+    height:auto;
+    margin: 1vw;
+  }
+  
+  
+  
+  #TopP1 {
+    display: block; /*  a block element */
+    width: 100%; /* Full width */
+    margin-bottom: 20px; /* Add space below */
+}
+  
+  
+  #ColumnFooter{
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Creates two equal-width columns */
+  width: 100%; 
+  box-sizing: border-box;
+    background-color: black;
+    }
+  
+  #Footer2{
+     justify-self:begin; /* Align left column to the start (left) */
+     font-size: 2vw; 
+    padding:20px;
+  }
+  #Footer3{
+     justify-self:end; /* Align left column to the start (left) */
+      font-size:2vw;
+    padding:20px;
+  }
+  .swiper{
+    display: flex;
+    width: 60%;
+  }
+  
+  
+.swiper-container {
+    width: 60%; /* Shrink Swiper width */
+    height: 150px; /* Shrink Swiper height */
+    margin: 0 auto; /*  horizontally */
+    display: flex; /* vertical center */
+    justify-content: center;
+    align-items: center;
+}
+
+/*  Align slidees */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Full height for the slide */
+}
+
+/* Adjust Image Sizes */
+.swiper-slide img {
+    width: 100%; /* Shrink image width */
+    height: auto; /* Maintain  ratio */
+    margin: none; /* Add spacing */
+}
+
+/* Style Navigation Buttons */
+
+
+
+/* Style Navigation Arrows */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 5vw !important;
+    color: white !important;
+}
+
+/* StyleDots */
+.swiper-pagination-bullet {
+    width: 8px; /* Smaller dots */
+    height: 8px;
+   background-color:white !important; /* White dots */
+}
+
+/* Hover Effect for Navigation */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    opacity: 0.8; /* transparency on hover */
+}
+
+  .sticky-menu {
+    position: fixed;
+    top: 0;
     width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    z-index: 10;
   }
 
-  #Footer2 {
+  .sticky-menu ul {
+    list-style: none;
     display: flex;
-    font-size: 3vw;
-    width: 100%;
-    background-color: aquamarine;
-    justify-content: space-between; /* Ensure footer is divided into 50/50 sections */
+    gap: 3vw;
   }
 
-  .line {
+  .sticky-menu ul li {
+    cursor: pointer;
+  }
+
+  .hidden {
+    transform: translateY(-100%); /* Slide it off-screen */
+  }
+
+  .TitleP1 {
+    display: block;
+    width: 100%;
+    text-align: center; /* Center the text */
+    margin-bottom: 30px; /* Add space below */
+}
+  .slanted {
+    font-style: italic;
+  }
+
+  .Separator {
+    background-color: black;
+    width: 0.45vw;
+    height: 14vw;
+    margin: 4vw;
+    border: none;
+    padding: 0;
+    transform-origin: center;
+    transform: scaleY(0.5) scaleX(0.5);
+  }
+
+  .ScrollMenu {
+    top: 0;
+    padding: 0;
+    position: fixed;
     margin: 0 auto;
-    width: 80vw; /* Length of the line */
-    height: 8px; /* Thickness of the line */
-    transform: scaleY(0.5);  /*YOOOO it was pixel inaccuracy 
-                              * bc ofv 79.5 or sth
-                              * now its fixed!!!!!!*/
-    background-color: #DAA520;
-    border-radius:5px;
-    transform-origin: top;
+    width: 100vw; /* Length  */
+    height: 20vw; /* Thickness  */
+    background-color: black;
+    border-top-left-radius: 10px; /* Rounded top left corner */
+    border-top-right-radius: 10px; /* Rounded top right corner */
+  }
+
+  .NoDeco {
+    text-decoration: none;
+    color: black;
+  }
+  .NoDecoWhite {
+    text-decoration: none;
+    color: white;
+
+}
+.NoDecoWhite:hover {
+  transform: scale(0.95)!important; /* Shrink the link to 95% of its original size */
+}
+
+  /*body a {
+    text-decoration: none;
+    color: black;
+  }
+ */
+  .Centered2 a {
     
+    font-size: 1.2rem; /* adjust font size to match */
+    color: black; /* link color */
   }
-
-  /*.star-image {  /*auskommentieren später
-    width: 20px;
-      height: 20px;
-      flex-shrink: 1; /* Allow the image to shrink 
-    max-width: 15vw; 
-    max-height: 15vh;
-    background-image: url('./Images/star.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin: 0 1vw; /* Add spacing around the star 
-
-   
-  }*/
-
-  /* Adjusting the container to display text and star inline */
- /* .SelectionContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2vw;
-    width: 100%;
-    flex-wrap: nowrap;*/ /* how to make sure all other shit behaves like image ??*/
-.SelectionContainer { /* i dont understand the difference but i like it better*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2vw;
-    width: 100%;
-    flex-wrap: nowrap;
-  }
-  }
-
-  .SelectionContainer .text {
-    margin: 0 1vw; /* Ensures spacing around the text */
-    border-color:black;
-  }
-      
-      .Projects{
-            width: 80vw;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 100%;  /* Ensure image doesn't overflow the container */
-            height: auto;
-      }
-      
-      
-      
-
-
-
-
-
-
-  SelectionContainer.text:not(:last-child):: {
+  .Centered a {
     
-   
-}   
-.SelectionContainer { /* keeps spacing nice*/
-    display: inline-flex;
-    align-items: center;
-    gap: 10px; /* Space between items */
-    flex-wrap: nowrap; /* Prevent wrapping */
+    font-size: 1.2rem; /*font size to match */
+    color: beige; /* link color */
+  }
+
+  /*.Centered {  (old)  */
+  /*display: flex; /* Use flexbox to align items in a row */
+  /*flex-direction: column; /* Stack items vertically */
+  /* align-items: center; /* Align items vertically centered */
+  /* justify-content: center;
+    gap: 10px; /* Add space between elements */
+}
+
+.CenteredText {
+  text-align: center; /* Center the text horizontally */
+  margin: 0; /* Remove any extra margin if present */
+  padding: 0; /* Remove extra padding */
+ margin-bottom: 10px; /* Add space below the heading */
+
+}
+
+.Centered {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  height: 100vh; /* Ensure the container takes full viewport height */
+  width: 100%; /* Ensure the container takes full viewport width */
+  text-align: center; /* Make sure text is centered within its container */
+}
+.Centered2 {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  height: 100vh; /* Ensure the container takes full viewport height */
+  width: 100%; /* Ensure the container takes full viewport width */
+  text-align: center; /* Make sure text is centered within its container */
+}
+
+
+.ProjectTitles{
+  font-size: 3vw;
+  margin-top:3vw
+
+}
+.ProjectTitles:hover{
+  transform: scale(0.95);
+}
+
+
+#BigMail {
+  font-size: 3vw;
+}
+
+.a {
+  text-decoration: none;
+}
+
+
+.Project1Page {
+  font-family: "Papyrus", sans-serif; /* Fallback font in case Papyrus isn't available */
+  font-weight: bold; /* To make the text bold */
+  font-style: italic; /* To make the text italic */
+  background-color: #b56e33;
+  color: white; /* Default text color */
+}
+
+body {
+  font-family: "Papyrus", sans-serif; /* Fallback font in case Papyrus isn't available */
+  font-weight: bold; /* To make the text bold */
+  font-style: italic; /* To make the text italic */
+}
+#Titlecard {
+  width: 70%;
+  border-top: 20px;
+}
+
+.FullWidthImage {
+  width: 100%; /* Makes the image span the full width of the viewport */
+  height: auto; /* Maintains the aspect ratio of the image */
+}
+
+.BeginOfText {
+  font-size: 1.2em;
+  transform: skewX(-10deg); /* Skew the text horizontally */
+  display: inline-block; /* Make it an inline-block for transform to work */
+}
+
+p {
+  font-size: 2vw; /* Default font size based on viewport width */
+}
+
+#TopP1 {
+    position: relative;
+    z-index: 1; /* Make sure it's not overlapped by anything else */
+    width: 100%;
+    margin-bottom: 30px; /* Space between image and title */
 }
 
 
 
 
-@media only screen and (max-width:640px){  /* small screens*/
-      
 #Top {
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;  /* Allow the container to adjust its height dynamically */
+  overflow: visible; /* Make sure no content is hidden */
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Full width of the viewport */
+  
+  
+  border-radius: 5px;
+}
+#Introduction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Full width of the viewport */
+  border-radius: 5px;
+  height: auto;  /* Allow the container to adjust its height dynamically */
+  overflow: visible; /* Make sure no content is hidden */
+}
+.PageTitle {
+  font-size: 4vw; /* Consider adjusting this */
+  padding: 1vw;   /* Add padding to ensure content is not too close to the edges */
+
+}
+
+#Footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1vw;
+  background-color: black;
+  width: 100%; /* Ensures the footer takes up the full width */
+  color: white;
+  border-radius: 5px;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in the width calculation */
+}
+
+body, html {
+  margin: 0; /* Make sure body and html have no margin */
+  padding: 0; /* Ensure there's no default padding */
+  height: 100%; /* This makes sure the footer stretches fully */
+}
+
+#Footer img {
+  max-width: 100%; /* Make sure images inside footer also scale properly */
+}
+
+
+/*#Footer2 {
+  display: flex;
+  font-size: 1vw;
+  width: 100%;
+  background-color: black;
+  justify-content: space-between; /* Ensure footer is divided into 50/50 sections */
+/*align-items: center;
+ border-radius: 5px;
+  
+}*/
+
+.line {
+  
+  margin: 0 auto;
+  width: 80vw; /* Length of the line */
+  height: 8px; /* Thickness of the line */
+  transform: scaleY(
+    0.5
+  ); /*YOOOO it was pixel inaccuracy 
+                              * bc ofv 79.5 or sth
+                              * now its fixed!!!!!!*/
+  background-color: black;
+  border-radius: 5px;
+  transform-origin: top;
+}
+
+.SelectionContainer {
+  /* i dont understand the difference but i like it better*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vw;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.SelectionContainer .text {
+  margin: 0 1vw; /* Ensures spacing around the text */
+  border-color: black;
+}
+
+.Projects {
+  width: 60vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%; /* Ensure image doesn't overflow the container */
+  height: auto;
+  margin-bottom: 5vw;
+}
+video:hover {
+ /* transform: scale(0.95); /* Shrink the video by 5% when hovered */
+  opacity:0.8;
+}
+  
+.SelectionContainer {
+  /* keeps spacing nice*/
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; /* Space between items */
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+@media only screen and (max-width: 640px) {
+  /* small screens*/
+
+  #Top {
     flex-direction: column; /* Stack elements vertically */
     height: auto; /* Allow the height to adjust dynamically */
     padding: 1vw;
-      
-.PageTitle {
-    font-size: 20vw; /* Increase font size to fit on smaller screens */
-    text-align: center; /* Ensure the text is centered */
+
+    .PageTitle {
+      font-size: 20vw; /* Increase font size to fit on smaller screens */
+      text-align: center; /* Ensure the text is centered */
+    }
   }
 
-}
-
- #Footer {
+  #Footer {
     flex-direction: column; /* Stack footer items vertically */
     font-size: 4vw; /* Adjust font size for smaller screens */
   }
 
-  #Footer2 {
+  /*#Footer2 {
     flex-direction: column; /* Stack footer sections vertically */
-    font-size: 4vw;
+  /*  font-size: 4vw;
     justify-content: flex-start; /* Align items to the start */
-  }
+  }*/
 
   .line {
     width: 80vw; /* Maintain width but allow for flexibility */
@@ -268,39 +681,28 @@ border: none;
 */
 
 
-}
+@media only screen and (min-width: 641px) and (max-width: 1024px) {
+  /* middle screens*/
 
+  .PageTitle {
+    font-size: 10vw;
+    padding: 1.5vw;
+  }
+  #Footer,
+  #Footer2 {
+    font-size: 3vw;
+  }
 
+  .Line {
+    width: 80vw;
+    height: 3px;
+  }
 
+  .SelectionContainer {
+    font-size: 2vw;
+  }
 
-
-@media only screen and (min-width:641px) and (max-width:1024px) { /* middle screens*/
-
-      .PageTitle {
-            font-size: 10vw;
-            padding: 1.5vw;
-      }
-      #Footer, #Footer2 {
-            font-size:3vw;
-      }
-
-      .Line {
-            width: 80vw;
-            height: 3px;
-      }
-.star-image {
-width: 12vw; /* Adjust size of the star */
-    height: 12vh;
-    max-width: none; /* Allow it to grow to the full width of the container */
-    max-height: none; /* Allow it to grow freely */
-    margin: 1.5vw 0; /* Adjust margin for better spacing */
-      
-}
-      .SelectionContainer{
-            font-size: 4vw;
-      }
-
-/*  .Separator{
+  /*  .Separator{
 background-color: black;
 width: 0.45vw;
 height:7vw;
@@ -310,29 +712,26 @@ padding: 0;
 }*/
 }
 
-@media only screen and (min-width:1024px) { /* big screen*/
+@media only screen and (min-width: 1024px) {
+  /* big screen*/
 
+  #Top {
+    padding: 2vw;
+  }
 
-      #Top {
-padding: 2vw;
-}
-
-.star-image {
-width: 20vw; /* Adjust size of the star */
+  .star-image {
+    width: 20vw; /* Adjust size of the star */
     height: 20vh;
     max-width: none; /* Allow it to grow to the full width of the container */
     max-height: none; /* Allow it to grow freely */
     margin: 2vw 0; /* Adjust margin for better spacing */
-      
-}
-.PageTitle {
-            font-size: 4vw;
-            padding: 2vw;
+  }
+  .PageTitle {
+    font-size: 4vw;
+    padding: 2vw;
+  }
 
-
-}
-
- /* .Separator{
+  /* .Separator{
 background-color: black;
 width: 0.45vw;
 height:7vw;
@@ -342,140 +741,88 @@ padding: 0;
 }*/
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media print {
-      
-      body{
-            
-      background-color: white;
-      color: black;
-      
-      }
-      
-      a{
-            display: block;
-            color: black;
-            text-decoration: underline;
-  
-      }
-      
-      *{
-            background: none !important;
+  body {
+    background-color: white;
+    color: black;
+  }
 
-      }
+  a {
+    display: block;
+    color: black;
+    text-decoration: underline;
+  }
 
+  * {
+    background: none !important;
+  }
 
-
-
-
-/*#Top, .Menu, .Grid, #Footer, #Footer2, .Item {
+  /*#Top, .Menu, .Grid, #Footer, #Footer2, .Item {
 
 display: block;
 margin: 0px;
 padding: 0px;
 
-  */    
+  */
 
+  #Top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Full width of the viewport */
+    height: 100px;
+    overflow: hidden;
+    border-radius: 5px;
+  }
 
-#Top {
+  .PageTitle {
+    font-size: 8vw;
+  }
 
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: red;
-margin: 0;
-padding: 0;
-width: 100%;          /* Full width of the viewport */
-height: 100px;
-overflow: hidden;
-border-radius: 5px;
+  .Grid {
+    display: grid;
+    grid-template-rows: 5vw;
+    gap: 1vw;
+    margin: 5%;
+  }
+
+  .Item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+  }
+
+  .I1 {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .I2 {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .I3 {
+    grid-column: 3;
+  }
+
+  #Footer {
+    display: flex;
+    flex-direction: column;
+    font-size: 3vw;
+    background-color: antiquewhite;
+    width: 100%;
+  }
+  
+
+  .line {
+    margin: 0 auto;
+    width: 80vw; /* Length of the line */
+    height: 2px; /* Thickness of the line */
+    background-color: #daa520;
+  }
 }
-
-
-
-.PageTitle{
-font-size: 8vw;
-}
-
-.Grid{
-    
-display: grid;
-grid-template-rows: 5vw;
-gap: 1vw;
-margin: 5%;
-
-}
-
-.Item{
-display: flex;
-justify-content: center;
-align-items: center;
-font-size: 3vw;
-}
-
-.I1{
-grid-row: 1;
-grid-column: 1;
-}
-
-.I2{
-grid-row: 1;
-grid-column: 2;
-}
-
-.I3{
-grid-column: 3;}
-
-#Footer{
-display: flex;
-flex-direction:column;
-font-size:3vw;
-background-color: antiquewhite;
-width: 100%;
-}
-#Footer2{
-display: flex;
-font-size: 3vw; 
-width: 100%;
-background-color:aquamarine; /* how would i make it 50/50 tho*/
-
-}
-
-.line {
-margin: 0 auto;      
-width: 80vw; /* Length of the line */
-height: 2px; /* Thickness of the line */
-background-color: #DAA520;
-}
-
-}
-
-
-
-
-
-
-
-
-
-
-

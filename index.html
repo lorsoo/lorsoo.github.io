@@ -5,51 +5,67 @@
         <meta charset="UTF-8" />
         <title>Portfolio Lorenz Müller</title>
         <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
         <script src="script.js"></script>
     </head>
     <body>
        
         
- <div class="ScrollMenu hidden"></div>       
+ 
+    
     
 
- <nav id="sticky-menu" class="hidden">
+ <nav class="sticky-menu hidden">
     <ul>
-      <li>Home</li>
-      <li>About</li>
-      <li>Projects</li>
-      <li>Contact</li>
+      <li><a class="NoDecoWhite" href="#Top">Home</a></li>
+      <li><a class="NoDecoWhite" href="About.html">About</a></li>
+      <li><a class="NoDecoWhite" href="Projects%20Overview.html">Projects</a></li>
+      <li><a class="NoDecoWhite" href="#Footer">Contact</a></li>
     </ul>
   </nav>    
         
-<div id="Top">
-    
-<h1 class="PageTitle">Lorenz D. Müller</h1>
-        
-</div>
- 
-        <br>
-        
-<div class="line"></div>
-        
-        
-<div id="trigger-element" class="Grid">
+<div id="Top" class=""><img src="Images/Portfolio%20Title%20Card.png" alt="Portfolio Title Card By Me" id="Titlecard"> </div>
+<!-- MY Grid-->
+        <div id="trigger-element" class="Grid"></div>
 
         
 <div class="SelectionContainer">
   
-    <div class="text">About</div>
+    <div class="text"><a class="NoDeco" href="About.html">About</a></div>
     <div class="Separator"></div>
    <!-- <div class="star-image"></div>-->
-    <div class="text">Projects</div>
+    <div class="text"><a class="NoDeco" href="Projects%20Overview.html">Projects</a></div>
     <div class="Separator"> </div>
     <!-- <div class="star-image"></div> -->
-    <div class="text">Animation</div>
-</div>
-    
+    <div class="text"><a class="NoDeco" href="index.html#Footer">Contact</a></div>
 </div>
         
-<div class="line"></div>
+        <div class="CenteredText">Lorenz Müller <br>3D Artist -  Animator  -  Illustrator</div>
+        
+    <div class="parentLine"><div class="Line1"></div></div>  
+        
+    
+    
+        
+        
+<div id="Introduction" class="Centered2">
+  <h1 class="PageTitle"> <a id="BigMail" class="NoDeco" href="mailto:lo13mueller@gmail.com">E-Mail: <br> lo13mueller@gmail.com</a></h1>
+    </div>   
+
+
+
+        <!-- Parentline as container for the actual line-->
+  <div class="parentLine"><div class="Line1"></div></div>     
+<!--<div class="line"></div>-->
+        
+<!--<p class="CenteredText">
+  <span class="BeginOfText">Hey!</span> <br>My name is Lorenz Müller and I'm a student at Hochschule Darmstadt developing games.
+<br>Please check out my Games and Reel!
+</p>  -->      
+
+
+        
+<!--<div class="line"></div>-->
  <br>
         
 
@@ -57,34 +73,60 @@
 
 
  <div class="Project1">
-       <a href="Project1.html"><img class="Projects" src="Images/Project1.jpg" alt="First Project" width="500" height="300">
-        </a>
+     <h2 id="GameProject" class="CenteredText ProjectTitles"><a class="NoDeco" href="Project1.html">Game Project</a></h2>
+       <video class="Projects" controls>
+  <source src="Videos/MaMS%20Trailer.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
         
         </div>
         
         <div class="Project1">
-        <img class="Projects" src="Images/Project1.jpg" alt="First Project" width="500" height="300">
+            
+        <h2 id="Showreel" class="CenteredText ProjectTitles"><a class="NoDeco" href="Project2.html">Showreel</a></h2>
+           <video class="Projects" controls>
+  <source src="Videos/Reel%202024.mp4" type="video/mp4">
+    Browser does not support the video.
+</video>
         
         </div>
 
  <div class="Project1">
-        <img class="Projects" src="Images/Project1.jpg" alt="First Project" width="500" height="300">
+<h2 id="Illustrations" class="CenteredText ProjectTitles"><a class="NoDeco" href="Project3.html">Illustrations</a></h2>
+        <a href="Project3.html"><img class="Projects Img" src="Images/Knight.jpg" alt="Illustration" width="500" height="300"></a>
         
         </div>
 
- <div class="Project1">
-        <img class="Projects" src="Images/Project1.jpg" alt="First Project" width="500" height="300">
-        
-        </div>
+ <!--Footer lines-->
         
 <div id="Footer">
-    Here goes the Main thank you 
+    <!--<h2 class="CenteredText">Contact</h2>-->
+    <img src="Images/Me%20white%20logo.PNG" width=300>
+    
+   <!--<p> Instagram</p>-->
+    <a class="Icon" href="https://www.instagram.com/lorennn_o?igsh=MTU1c3hsZXc4M2ZleQ%3D%3D&utm_source=qr"><img class="IconImage" src="Images/Insta%20logo.PNG" width=20px></a>
+       <!-- <p>LinkedIn</p>-->
+    <a class="Icon" href="https://www.linkedin.com/in/lorenz-m%C3%BCller-889465279?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><img class="IconImage" src="Images/Linkedin%20logo.PNG" width=20px></a>
+       <!-- <p>Youtube</p>-->
+<a class="Icon" href="https://www.youtube.com/@muello5835/featured"><img class="IconImage" src="Images/yt%20logo%20white.PNG" width=20vw></a> 
     <br>
+    
+    <div id="End" class="CenteredText">
+  <h3 class="EndMail"> <a id="MailEnd" class="NoDecoWhite" href="mailto:lo13mueller@gmail.com">lo13mueller@gmail.com</a></h3>
+    </div>   
+    
+    <br>
+    <div id="ColumnFooter">
     <div id="Footer2">
-        Here goes the credits
-    
+      <a class="NoDecoWhite" href="Project2.html"><span class="Word">Animation</span> </a><a class="NoDecoWhite" href="Project3.html"><span class="Word">Illustration</span></a>
+    <a class="NoDecoWhite Word" href="Project1.html"><span class="Word">Games</span></a>  
+        <br>
     </div>
-    
+    <div id="Footer3">
+       2024 © Lorenz Müller
+        <br>
+    </div>
+    </div>
 </div>        
         
         

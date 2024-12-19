@@ -1,10 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Title</title>
-    </head>
-    <body>
-<p> Hello Project1</p>
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Lorenz Müller</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+</head>
+    
+    
+    
+<body class="Project1Page">
+
+    
+       <!--fix menu !!!--><nav class="sticky-menu hidden">
+    <ul>
+      <li><a class="NoDecoWhite" href="#Top">Home</a></li>
+      <li><a class="NoDecoWhite" href="About.html">About</a></li>
+      <li><a class="NoDecoWhite" href="Projects%20Overview.html">Projects</a></li>
+      <li><a class="NoDecoWhite" href="#Footer">Contact</a></li>
+    </ul>
+  </nav>    
+    
+    
+    <!-- Content above swiper -->
+    <div id="TopP1">
+        <img src="Images/MeandMyShadow.png" alt="Artist: Leonie Droege" class="FullWidthImage">
+    </div>
+    
+<div class="SelectionContainer">
+  
+    <div class="text"><a class="NoDeco" href="About.html">About</a></div>
+    <div class="Separator"></div>
+   <!-- <div class="star-image"></div>-->
+    <div class="text"><a class="NoDeco" href="Projects%20Overview.html">Projects</a></div>
+    <div class="Separator"> </div>
+    <!-- <div class="star-image"></div> -->
+    <div class="text"><a class="NoDeco" href="index.html#Footer">Links</a></div>
+</div>
+    <div class="TitleP1">
+        <h1 class="slanted">Me And My Shadow</h1>
+    </div>
+
+    <!-- Swiper slider -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="Images/Game%201%20Screenshot.png" alt="Slide 1">
+            </div>
+            <div class="swiper-slide">
+                <img src="Images/Game%202%20Screenshot.png" alt="Slide 2">
+            </div>
+            <div class="swiper-slide">
+                <img src="Images/Game%203%20Screenshot.png" alt="Slide 3">
+            </div>
+        </div>
+        <!-- Nav buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- Pages -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Other content -->
+    <div><h2 class="CenteredText">Description</h2></div>
+    <p class="CenteredText">As my first Semlester Project, Me and My Shadow was the perfect start into my Life as game deveoper</p>
+
+    <div class="CenteredText">
+        <a href="https://meke333.itch.io/me-and-my-shadow" alt="Link to Me and My Shadow Game" class="GameLink">
+            <img src="Images/Download%20Logo.png" width="200vw ">
+        </a>
+    </div>
+
+    <nav class="hidden sticky-menu">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Projects</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <div id="Footer">
+        <img src="Images/Me%20white%20logo.PNG" width="300">
+        <a class="Icon" href="https://www.instagram.com/lorennn_o?igsh=MTU1c3hsZXc4M2ZleQ%3D%3D&utm_source=qr">
+            <img class="IconImage" src="Images/Insta%20logo.PNG" width="20px">
+        </a>
+        <a class="Icon" href="https://www.linkedin.com/in/lorenz-m%C3%BCller-889465279?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">
+            <img class="IconImage" src="Images/Linkedin%20logo.PNG" width="20px">
+        </a>
+        <a class="Icon" href="https://www.youtube.com/@muello5835/featured">
+            <img class="IconImage" src="Images/yt%20logo%20white.PNG" width="20vw">
+        </a>
+        <div id="ColumnFooter">
+            <div id="Footer2">
+                <a class="NoDecoWhite" href="Project2.html"><span class="Word">Animation</span> </a>
+                <a class="NoDecoWhite" href="Project3.html"><span class="Word">Illustration</span></a>
+                <a class="NoDecoWhite Word" href="Project1.html"><span class="Word">Games</span></a>
+            </div>
+            <div id="Footer3">
+                2024 © Lorenz Müller
+            </div>
+        </div>
+    </div>
+
+    <!-- Swiper JS bc idk why not work in the js file -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000, // Auto slide in 3 sec
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+</body>
 </html>
+
